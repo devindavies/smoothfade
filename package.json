@@ -1,31 +1,33 @@
 {
-  "name": "smoothfade",
-  "version": "1.1.1",
-  "description": "Smooth volume fading for WebAudio",
-  "main": "index.js",
-  "scripts": {
-    "test": "jshint index.js && browserify test.js > bundle.js && http-server",
-    "build": "jshint index.js && js-beautify -r index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/notthetup/smoothfade.git"
-  },
-  "keywords": [
-    "webaudio",
-    "fade",
-    "volume",
-    "gain"
-  ],
-  "author": "Chinmay Pendharkar",
-  "license": "Apache2",
-  "bugs": {
-    "url": "https://github.com/notthetup/smoothfade/issues"
-  },
-  "homepage": "https://github.com/notthetup/smoothfade",
-  "devDependencies": {
-    "browserify": "^16.5.0",
-    "js-beautify": "^1.10.2",
-    "jshint": "^2.10.2"
-  }
+	"name": "smoothfade",
+	"version": "1.1.1",
+	"description": "Smooth volume fading for WebAudio",
+	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		}
+	},
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/notthetup/smoothfade.git"
+	},
+	"keywords": ["webaudio", "fade", "volume", "gain"],
+	"author": "Chinmay Pendharkar",
+	"license": "Apache2",
+	"bugs": {
+		"url": "https://github.com/notthetup/smoothfade/issues"
+	},
+	"homepage": "https://github.com/notthetup/smoothfade",
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@types/node": "^22.0.0",
+		"typescript": "^5.5.4"
+	}
 }
